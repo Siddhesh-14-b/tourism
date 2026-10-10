@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incredible India | Explore. Experience. Remember.</title>
+<style>
+:root{--navy:#12365d;--blue:#17609b;--orange:#f59a23;--ink:#18324f;--muted:#65758b;--cream:#f7f8fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6.5%;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 18px #122b4510}
+.brand{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-size:25px;font-weight:bold;color:var(--navy);white-space:nowrap}.brand-mark{font-size:30px;color:var(--orange)}.brand small{display:block;font:11px Arial,sans-serif;letter-spacing:1.2px;color:var(--muted);margin-top:2px}
+nav{display:flex;gap:27px;font-size:14px;color:#263f5d}nav a:hover{color:var(--blue)}.nav-cta,.primary{background:var(--blue);color:#fff;border:0;border-radius:30px;padding:13px 21px;cursor:pointer}.nav-cta:hover,.primary:hover{background:var(--navy)}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
+.hero{min-height:430px;background:linear-gradient(90deg,rgba(9,35,65,.78),rgba(9,35,65,.35) 48%,rgba(9,35,65,.03)),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=2000&q=85') center 48%/cover;display:flex;align-items:center;color:white;padding:60px 6.5%}.hero-content{max-width:660px}.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700}.hero h1{font:clamp(43px,6vw,70px)/1.02 Georgia,serif;margin:17px 0}.hero p{font-size:16px;line-height:1.75;max-width:510px;color:#f5f7fb}.searchbar{display:flex;align-items:center;gap:8px;background:#fff;padding:8px;border-radius:50px;max-width:690px;margin-top:26px;box-shadow:0 8px 30px #001a3430}.searchbar input,.searchbar select{min-width:0;flex:1;border:0;outline:0;padding:12px;color:#344b65;background:transparent}.searchbar .primary{padding:14px 23px}
+.quicklinks{display:grid;grid-template-columns:repeat(5,1fr);padding:22px 6.5%;gap:12px;border-bottom:1px solid #e9edf2}.quick{display:flex;align-items:center;gap:12px;padding:9px 7px}.quick-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:50%;background:#e9f2fc;font-size:22px;flex-shrink:0}.quick strong{display:block;font-size:13px}.quick span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+section{padding:48px 6.5%}.section-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}.section-kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#53718f;font-weight:700}.section-top h2,.about h2{font:34px Georgia,serif;margin:7px 0 0;color:var(--navy)}.view-all{color:var(--blue);font-size:13px;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.destination{height:235px;position:relative;overflow:hidden;border-radius:12px;background:#dce5ed;cursor:pointer;box-shadow:0 5px 15px #173b5a12}.destination img{width:100%;height:100%;object-fit:cover;transition:transform .35s}.destination:hover img{transform:scale(1.07)}.destination:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.8))}.dest-text{position:absolute;bottom:15px;left:15px;right:12px;color:white;z-index:1}.dest-text h3{font-size:17px;margin:0 0 5px}.dest-text p{font-size:11px;margin:0;color:#f0f3f6}
+.about{display:grid;grid-template-columns:1fr 1fr 0.85fr;align-items:center;gap:32px;background:#f6f8fa}.about-photo{height:275px;width:100%;object-fit:cover;border-radius:14px}.about p{line-height:1.8;color:var(--muted);font-size:14px}.reasons{display:grid;gap:19px}.reason{display:flex;gap:13px;align-items:center}.reason-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:#fff0dc;font-size:20px}.reason strong{font-size:13px}.reason p{font-size:11px;margin:4px 0 0}
+.planner{background:#12365d;color:white;text-align:center;padding-top:45px;padding-bottom:45px}.planner h2{font:34px Georgia,serif;margin:0 0 12px}.planner p{color:#d9e4ef;line-height:1.6}.planner .primary{background:var(--orange);color:#182f47;font-weight:bold;margin-top:8px}
+footer{padding:25px 6.5%;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:12px}footer strong{color:var(--navy)}
+.notice{display:none;margin:15px 0 0;background:#fff;color:var(--navy);padding:12px 16px;border-radius:10px;font-size:14px}
+@media(max-width:1000px){nav{gap:13px}.cards{grid-template-columns:repeat(3,1fr)}.quicklinks{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:1fr 1fr}.reasons{grid-column:1/-1;grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){header{height:68px;padding:0 5%}.brand{font-size:20px}.brand-mark{font-size:25px}nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 6%;flex-direction:column;box-shadow:0 10px 15px #0001}nav.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{padding:48px 5%;min-height:490px;background-position:60% center}.hero h1{font-size:48px}.searchbar{border-radius:18px;flex-wrap:wrap}.searchbar input,.searchbar select{flex-basis:40%}.searchbar .primary{width:100%}.quicklinks{grid-template-columns:repeat(2,1fr);padding:18px 5%}.quick{gap:8px}.quick-icon{width:38px;height:38px;font-size:18px}section{padding:38px 5%}.section-top h2,.about h2,.planner h2{font-size:29px}.cards{grid-template-columns:repeat(2,1fr);gap:12px}.destination{height:205px}.about{grid-template-columns:1fr}.about-photo{height:220px}.reasons{grid-column:auto;grid-template-columns:1fr}.section-top{align-items:start;flex-direction:column}footer{padding:22px 5%;flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home"><span class="brand-mark">▲</span><span>Incredible India<small>EXPLORE · EXPERIENCE · REMEMBER</small></span></a>
+  <nav id="nav"><a href="#home">Home</a><a href="#destinations">Destinations</a><a href="#guides">Travel Guides</a><a href="#about">About India</a><a href="#contact">Contact</a></nav>
+  <button class="nav-cta" onclick="document.querySelector('#planner').scrollIntoView({behavior:'smooth'})">✈ Plan Your Trip</button>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('#nav').classList.toggle('open')">☰</button>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Discover the beauty of</div>
+    <h1>Incredible India</h1>
+    <p>From majestic mountains to golden beaches, ancient temples to vibrant cities — explore the diverse landscapes, rich culture and timeless heritage of India.</p>
+    <form class="searchbar" id="searchForm">
+      <input id="placeInput" aria-label="Destination" placeholder="⌖  Where do you want to go?" required>
+      <select id="tripType" aria-label="Trip type"><option value="Any experience">✧ Any experience</option><option>Adventure</option><option>Culture & Heritage</option><option>Beaches</option><option>Nature</option><option>Food</option></select>
+      <button class="primary" type="submit">⌕ Explore</button>
+    </form>
+    <div class="notice" id="searchNotice" role="status"></div>
+  </div>
+</section>
+<div class="quicklinks" id="guides">
+  <a class="quick" href="#destinations"><div class="quick-icon">♧</div><div><strong>Popular Destinations</strong><span>Top places to visit</span></div></a>
+  <a class="quick" href="#about"><div class="quick-icon">▣</div><div><strong>Travel Guides</strong><span>Tips, itineraries & more</span></div></a>
+  <a class="quick" href="#planner"><div class="quick-icon">☼</div><div><strong>Best Time to Visit</strong><span>Seasonal recommendations</span></div></a>
+  <a class="quick" href="#about"><div class="quick-icon">◎</div><div><strong>Local Experiences</strong><span>Food, culture, adventure</span></div></a>
+  <a class="quick" href="#planner"><div class="quick-icon">▣</div><div><strong>Plan Your Trip</strong><span>Customise your journey</span></div></a>
+</div>
+<section id="destinations">
+  <div class="section-top"><div><div class="section-kicker">Explore top destinations</div><h2>Must-Visit Places in India</h2></div><a class="view-all" href="#destinations" onclick="showAll(event)">View all destinations →</a></div>
+  <div class="cards" id="destinationCards">
+    <article class="destination" data-name="Agra" data-tags="culture heritage history"><img loading="lazy" alt="Taj Mahal in Agra" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Agra</h3><p>Taj Mahal · Heritage · Culture</p></div></article>
+    <article class="destination" data-name="Manali" data-tags="adventure nature mountains"><img loading="lazy" alt="Himalayan mountains near Manali" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Manali</h3><p>Mountains · Adventure · Nature</p></div></article>
+    <article class="destination" data-name="Goa" data-tags="beaches relaxation food"><img loading="lazy" alt="Tropical beach in Goa" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Goa</h3><p>Beaches · Nightlife · Relaxation</p></div></article>
+    <article class="destination" data-name="Jaipur" data-tags="culture heritage history"><img loading="lazy" alt="Hawa Mahal in Jaipur" src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Jaipur</h3><p>Royalty · History · Culture</p></div></article>
+    <article class="destination" data-name="Kerala" data-tags="nature relaxation food"><img loading="lazy" alt="Kerala backwaters" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Kerala</h3><p>Backwaters · Ayurveda · Nature</p></div></article>
+    <article class="destination extra" data-name="Varanasi" data-tags="culture heritage history" hidden><img loading="lazy" alt="Varanasi ghats" src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=700&q=80"><div class="dest-text"><h3>⌖ Varanasi</h3><p>Spirituality · River · Heritage</p></div></article>
+    <article class="destination extra" data-name="Ladakh" data-tags="adventure nature mountains" hidden><img loading="lazy" alt="Ladakh mountains" src="https://images.unsplash.com/photo-1581793745862-99 речь?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80'"><div class="dest-text"><h3>⌖ Ladakh</h3><p>High mountains · Adventure</p></div></article>
+  </div>
+  <p id="noResults" style="display:none;color:#65758b">No matching destination found. Try “Goa”, “Agra”, “Manali”, “Jaipur” or “Kerala”.</p>
+</section>
+<section class="about" id="about">
+  <img class="about-photo" loading="lazy" alt="A traveller exploring India's historic architecture" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80">
+  <div><div class="section-kicker">Why travel India?</div><h2>More Than Just a Destination</h2><p>India is a feeling — a mix of colours, flavours, history, spirituality and adventure. Every journey tells a story, and every place has a new surprise waiting for you.</p><a class="view-all" href="#destinations">Find your next adventure →</a></div>
+  <div class="reasons">
+    <div class="reason"><div class="reason-icon">⌁</div><div><strong>Diverse Landscapes</strong><p>Mountains, beaches, forests, deserts and more</p></div></div>
+    <div class="reason"><div class="reason-icon">♙</div><div><strong>Rich Heritage</strong><p>Ancient monuments, temples, forts and culture</p></div></div>
+    <div class="reason"><div class="reason-icon">♡</div><div><strong>Warm Hospitality</strong><p>Experience the spirit of Indian hospitality</p></div></div>
+  </div>
+</section>
+<section class="planner" id="planner"><h2>Your India Story Starts Here</h2><p>Choose a destination, follow your curiosity, and make memories along the way.</p><button class="primary" onclick="document.querySelector('#placeInput').focus();document.querySelector('#home').scrollIntoView({behavior:'smooth'})">✈ Start Exploring</button></section>
+</main>
+<footer id="contact"><div><strong>▲ Incredible India</strong><br>Explore · Experience · Remember</div><div>College project demo · Travel inspiration website</div><div>Made with ♥ for curious travellers</div></footer>
+<script>
+const form=document.getElementById('searchForm');
+const placeInput=document.getElementById('placeInput');
+const tripType=document.getElementById('tripType');
+const notice=document.getElementById('searchNotice');
+const cards=[...document.querySelectorAll('.destination')];
+form.addEventListener('submit',function(e){
+ e.preventDefault();
+ const q=placeInput.value.trim().toLowerCase();
+ const tag=tripType.value.toLowerCase();
+ let count=0;
+ cards.forEach(card=>{
+   const matchesName=card.dataset.name.toLowerCase().includes(q)||q.split(/\s+/).some(word=>word.length>2&&card.dataset.name.toLowerCase().includes(word));
+   const matchesTag=tag==='any experience'||card.dataset.tags.includes(tag.split(' ')[0])||card.dataset.tags.includes(tag.replace(' & ',' '));
+   const show=matchesName&&(tag==='any experience'||matchesTag);
+   card.hidden=!show;
+   if(show)count++;
+ });
+ document.getElementById('noResults').style.display=count?'none':'block';
+ notice.style.display='block';
+ notice.textContent=count?`Showing ${count} destination${count===1?'':'s'} for your search.`:'No exact match found. Try a destination name or choose “Any experience”.';
+ document.getElementById('destinations').scrollIntoView({behavior:'smooth'});
+});
+function showAll(e){e.preventDefault();cards.forEach(c=>c.hidden=false);document.getElementById('noResults').style.display='none';notice.style.display='none';document.getElementById('destinations').scrollIntoView({behavior:'smooth'});}
+document.querySelectorAll('.destination').forEach(card=>card.addEventListener('click',()=>{
+ placeInput.value=card.dataset.name;
+ document.getElementById('home').scrollIntoView({behavior:'smooth'});
+ notice.style.display='block';notice.textContent=`Great choice! You selected ${card.dataset.name}. Use Explore to filter destinations.`;
+}));
+</script>
+</body>
+</html>
